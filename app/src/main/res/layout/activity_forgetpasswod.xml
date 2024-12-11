@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".forgetpasswod">
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="413dp"
+
+        android:layout_height="63dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="63dp"
+            android:layout_height="63dp"
+            app:srcCompat="@drawable/code5"
+            android:contentDescription="back"/>
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="347dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Forget password"
+            android:textColor="#0F0231"
+            android:textSize="30dp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="378dp"
+        android:layout_height="511dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout8"
+        app:srcCompat="@drawable/istockphoto_1394116913_612x612__1__removebg_preview" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="169dp"
+        android:layout_height="42dp"
+        android:text="Email Address"
+        android:textColor="#160E68"
+        android:textSize="23dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView27"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView27"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="340dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/border"
+        android:hint="  gmail@gmail.com"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:textColor="#231464"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView24"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView24"
+        app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+    <Button
+        android:id="@+id/sendCodeButton"
+        android:layout_width="288dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="#04002F"
+        android:text="Send the Code"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/emailEditText"
+        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintStart_toStartOf="@+id/emailEditText" />
+
+    <ImageView
+        android:id="@+id/imageView25"
+        android:layout_width="195dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="448dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView9"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/imageView9"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout8"
+        app:srcCompat="@drawable/forget2" />
+
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="348dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView25"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="@+id/imageView25"
+        app:layout_constraintTop_toBottomOf="@+id/imageView25"
+        app:srcCompat="@drawable/forget1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".postassignment">
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="413dp"
+
+        android:layout_height="63dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+
+            android:id="@+id/menuButton"
+            android:layout_width="53dp"
+            android:layout_height="64dp"
+            android:background="#BFBBCB"
+            android:contentDescription="menu"
+            android:src="@drawable/baseline_dehaze_24" />
+
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="65dp"
+            android:layout_height="63dp"
+            android:layout_marginBottom="580dp"
+            android:src="@drawable/welcome1__2_"
+            app:srcCompat="@drawable/welcome1__2_" />
+
+        <EditText
+            android:id="@+id/searchBar"
+            style="@style/Widget.AppCompat.AutoCompleteTextView"
+            android:layout_width="242dp"
+            android:layout_height="64dp"
+            android:background="#EFEFEF"
+            android:hint="        What are you looking for" />
+
+        <ImageButton
+            android:id="@+id/notificationButton"
+            android:layout_width="54dp"
+            android:layout_height="63dp"
+            android:background="#BFBBCB"
+            android:contentDescription="Notifications"
+            android:src="@drawable/baseline_edit_notifications_24"
+            tools:srcCompat="@drawable/baseline_edit_notifications_24" />
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView2"
+        android:layout_width="410dp"
+        android:layout_height="69dp"
+        app:backgroundTint="#9293A9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_of_menu"
+        app:itemIconTint="#FFFF"
+        app:itemIconSize="32dp"/>
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.084"
+        app:srcCompat="@drawable/code5" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        android:layout_marginTop="120dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Assignment Title"
+                android:textSize="19sp"
+                android:textColor="#130036"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/assignmentTitle"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Enter the title"
+                android:background="@drawable/border"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="19sp"
+                android:textColor="#130036"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="107dp"
+                android:background="@drawable/border"
+                android:gravity="top"
+                android:hint="Enter the description"
+                android:inputType="textMultiLine" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="Subject Area"
+                android:textSize="19sp"
+                android:textColor="#130036" />
+
+            <EditText
+                android:id="@+id/subjectArea"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Enter the subject area"
+                android:background="@drawable/border"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Due Date and Time"
+                android:textSize="19sp"
+                android:textColor="#130036"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/border">
+
+                <EditText
+                    android:id="@+id/dueDate"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="48dp"
+                    android:hint="MM/DD/YYYY"
+                   />
+
+                <EditText
+                    android:id="@+id/dueTime"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="48dp"
+                    android:hint="00:00"
+                    />
+
+                <Spinner
+                    android:id="@+id/amPmSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:entries="@array/am_pm"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment Offer"
+                android:textSize="19sp"
+                android:textColor="#130036"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/paymentOffer"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Enter the amount you are willing to pay"
+                android:background="@drawable/border"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/border">
+
+                <ImageButton
+                    android:id="@+id/imageButton5"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:contentDescription="fileattach"
+                    app:srcCompat="@drawable/baseline_attachment_24" />
+
+                <TextView
+                    android:id="@+id/textAttachFile"
+                    android:layout_width="320dp"
+                    android:layout_height="48dp"
+                    android:text="Attach file"
+                    android:textColor="#757575"
+                    android:textSize="16sp"
+                    android:background="@drawable/border"/>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/forgotPassword2"
+                android:layout_width="220dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="70dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:paintFlags="underline"
+                android:text="Save as Draft"
+                android:textColor="#65558F"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/googleSignInButton"
+                app:layout_constraintStart_toStartOf="@+id/googleSignInButton"
+                app:layout_constraintTop_toBottomOf="@+id/googleSignInButton" />
+
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="288dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center_horizontal"
+
+                android:backgroundTint="#04002F"
+                android:text="Next"
+                android:textColor="#FFFFFF"
+                android:textSize="19sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="327dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Post your Assignment"
+        android:textColor="#04002F"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButton4"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

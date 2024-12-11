@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="button">Button</string>
+    <string name="textview">TextView</string>
+    <string name="button1">Button</string>
+    <string name="button3">Button</string>
+    <string name="button5">Button</string>
+    <string-array name="am_pm">
+        <item>AM</item>
+        <item>PM</item>
+    </string-array>
+    <string-array name="spinnerctagory">
+        <item>Delivery and Errands</item>
+        <item>Tutoring/Educational</item>
+        <item>Pet care/House Sitting</item>
+        <item>Cleaning/Maintenance</item>
+        <item>Digital Assistance</item>
+        <item>Others</item>
+    </string-array>
+</resources>

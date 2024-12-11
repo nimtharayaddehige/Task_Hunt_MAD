@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signuppage">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Student Account" />
+
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sevice Provider Account" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <TextView
+        android:id="@+id/regtopic"
+        android:layout_width="211dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:gravity="center"
+        android:text="Student Registration"
+        android:textColor="#030644"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+
+    <LinearLayout
+        android:layout_width="354dp"
+        android:layout_height="800dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="24dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/regtopic">
+
+        <TextView
+            android:id="@+id/lfname"
+            android:layout_width="81dp"
+            android:layout_height="25dp"
+            android:text="First Name"
+            android:textColor="#130036"
+            android:textSize="19sp"
+            tools:layout_editor_absoluteX="263dp"
+            tools:layout_editor_absoluteY="244dp" />
+
+        <EditText
+            android:id="@+id/firstname"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/border"
+            android:ems="10"
+            android:hint="Enter your First name"
+            android:inputType="text"
+            android:text=""
+            android:textColorHint="#888888"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="145dp" />
+
+        <TextView
+            android:id="@+id/llname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Name"
+            android:textColor="#130036"
+            android:textSize="19sp"
+            tools:layout_editor_absoluteX="81dp"
+            tools:layout_editor_absoluteY="243dp" />
+
+        <EditText
+            android:id="@+id/lastname"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/border"
+            android:ems="10"
+            android:hint="Enter your Last name"
+            android:inputType="text"
+            android:text=""
+            android:textColorHint="#888888"
+            tools:layout_editor_absoluteX="48dp"
+            tools:layout_editor_absoluteY="640dp" />
+
+        <TextView
+            android:id="@+id/ldbirth"
+            android:layout_width="109dp"
+            android:layout_height="23dp"
+            android:text="Date of Birth"
+            android:textColor="#130036"
+            android:textSize="19sp"
+            tools:layout_editor_absoluteX="81dp"
+            tools:layout_editor_absoluteY="269dp" />
+
+        <EditText
+            android:id="@+id/birthday"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/border"
+            android:ems="10"
+            android:hint="dd/mm/yyyy"
+            android:inputType="date"
+            android:textColorHint="#888888"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="390dp" />
+
+        <TextView
+            android:id="@+id/llocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:textColor="#130036"
+            android:textSize="19sp"
+            tools:layout_editor_absoluteX="92dp"
+            tools:layout_editor_absoluteY="343dp" />
+
+        <Spinner
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/border"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="446dp" />
+
+        <TextView
+            android:id="@+id/lfieldofstudy"
+            android:layout_width="173dp"
+            android:layout_height="wrap_content"
+            android:text="Field of Study"
+            android:textColor="#130036"
+            android:textSize="19sp"
+            tools:layout_editor_absoluteX="92dp"
+            tools:layout_editor_absoluteY="305dp" />
+
+        <Spinner
+            android:id="@+id/studylocation"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/border"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="510dp" />
+
+        <TextView
+            android:id="@+id/lcontact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact number"
+            android:textColor="#130036"
+            android:textSize="19sp"
+            tools:layout_editor_absoluteX="263dp"
+            tools:layout_editor_absoluteY="292dp" />
+
+        <EditText
+            android:id="@+id/contactNumber"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/border"
+            android:ems="10"
+            android:hint="+94"
+            android:inputType="number"
+            android:textColorHint="#888888"
+            tools:layout_editor_absoluteX="33dp"
+            tools:layout_editor_absoluteY="767dp" />
+
+        <TextView
+            android:id="@+id/lemail"
+            android:layout_width="167dp"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textColor="#130036"
+            android:textSize="19sp"
+            tools:layout_editor_absoluteX="256dp"
+            tools:layout_editor_absoluteY="343dp" />
+
+        <EditText
+            android:id="@+id/emailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/border"
+            android:ems="10"
+            android:hint="Enter your Email"
+            android:inputType="textEmailAddress"
+            android:textColorHint="#888888"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="694dp" />
+
+        <TextView
+            android:id="@+id/lpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textColor="#130036"
+            android:textSize="19sp"
+            tools:layout_editor_absoluteX="256dp"
+            tools:layout_editor_absoluteY="316dp" />
+
+
+        <EditText
+            android:id="@+id/editTextNumberPassword"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/border"
+            android:ems="10"
+            android:hint="  New password"
+            android:inputType="numberPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+
+        <EditText
+            android:id="@+id/repassword"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/border"
+            android:ems="10"
+            android:hint="Re-Enter password"
+            android:inputType="textPassword"
+            android:textColorHint="#888888"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="578dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <Button
+                android:id="@+id/backbtn"
+                android:layout_width="133dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#9F9CBE"
+                android:text="Back"
+                android:textColor="#FFFFFF"
+                android:textSize="19sp"
+                tools:layout_editor_absoluteX="-24dp"
+                tools:layout_editor_absoluteY="187dp" />
+
+            <Button
+                android:id="@+id/nextbtn"
+                android:layout_width="133dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="60dp"
+                android:backgroundTint="#04002F"
+                android:text="Next"
+                android:textColor="#FFFFFF"
+                android:textSize="19sp"
+                tools:layout_editor_absoluteX="230dp"
+                tools:layout_editor_absoluteY="193dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

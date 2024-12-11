@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Task"
+        android:icon="@drawable/baseline_auto_fix_high_24"
+        android:id="@+id/task"
+        />
+    <item
+        android:title="My Task"
+        android:icon="@drawable/baseline_add_task_24"
+        android:id="@+id/mytask"/>
+    <item
+        android:title="Home"
+        android:icon="@drawable/baseline_home_24"
+        android:id="@+id/home"/>
+    <item
+        android:title="Calender"
+        android:icon="@drawable/baseline_calendar_month_24"
+        android:id="@+id/calender"/>
+</menu>
