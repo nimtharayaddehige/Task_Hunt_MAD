@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "735150193338",
+    "project_id": "task-hunt-b601b",
+    "storage_bucket": "task-hunt-b601b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735150193338:android:a21a294d33ab10822d6083",
+        "android_client_info": {
+          "package_name": "com.example.test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3ar6pTeRdmxz0gjLFY7Lfr0bFNDjQUNI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

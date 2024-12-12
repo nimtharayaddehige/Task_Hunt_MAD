@@ -1,6 +1,8 @@
 package com.example.test;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,15 +12,38 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class enterapp extends AppCompatActivity {
 
+    // Declare buttons
+    Button loginButton, signupButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_enterapp);
+
+        // Enable edge-to-edge insets
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        // Initialize buttons
+        loginButton = findViewById(R.id.loginButton);
+        signupButton = findViewById(R.id.signupButton);
+
+        // Set onClickListener for Login button
+        loginButton.setOnClickListener(v -> {
+            // Navigate to Login Activity
+            Intent loginIntent = new Intent(enterapp.this, loginpage.class);
+            startActivity(loginIntent);
+        });
+
+        // Set onClickListener for SignUp button
+        signupButton.setOnClickListener(v -> {
+            // Navigate to SignUp Activity
+            Intent signupIntent = new Intent(enterapp.this, signuppage.class);
+            startActivity(signupIntent);
         });
     }
 }

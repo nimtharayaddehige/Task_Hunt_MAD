@@ -45,7 +45,7 @@
         android:id="@+id/imageView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/login"
+        app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,20 +54,20 @@
         app:srcCompat="@drawable/language3" />
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/loginButton"
         android:layout_width="288dp"
         android:layout_height="56dp"
         android:layout_marginBottom="12dp"
         android:backgroundTint="#9F9CBE"
         android:text="Login"
         android:textSize="19sp"
-        app:layout_constraintBottom_toTopOf="@+id/signup"
+        app:layout_constraintBottom_toTopOf="@+id/signupButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.552"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/signup"
+        android:id="@+id/signupButton"
         android:layout_width="288dp"
         android:layout_height="56dp"
         android:layout_marginBottom="100dp"
