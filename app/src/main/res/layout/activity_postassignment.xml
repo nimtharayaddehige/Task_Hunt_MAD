@@ -225,7 +225,7 @@
 
 
             <TextView
-                android:id="@+id/forgotPassword2"
+                android:id="@+id/signupField"
                 android:layout_width="220dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="70dp"

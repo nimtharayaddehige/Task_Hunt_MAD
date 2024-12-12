@@ -2,7 +2,6 @@ package com.example.test;
 
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -36,7 +35,7 @@ public class forgetpasswod extends AppCompatActivity {
         });
 
         // Initialize UI elements
-        emailField = findViewById(R.id.emailEditText); // ID for the email input field
+        emailField = findViewById(R.id.emailField); // ID for the email input field
         sendCodeButton = findViewById(R.id.sendCodeButton); // ID for the "Send Code" button
 
         // Initialize Firebase Authentication

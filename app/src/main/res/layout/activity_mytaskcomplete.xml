@@ -66,7 +66,7 @@
         app:srcCompat="@drawable/istockphoto_1372101894_612x612_removebg_preview" />
 
     <ImageView
-        android:id="@+id/imageView32"
+        android:id="@+id/okImage"
         android:layout_width="74dp"
         android:layout_height="77dp"
         android:layout_marginTop="44dp"
