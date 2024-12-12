@@ -7,4 +7,232 @@
     android:layout_height="match_parent"
     tools:context=".schedule">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F8F8FF"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="436dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="155dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:backgroundTint="#9F9CBE"
+                android:drawableStart="@drawable/ic_task"
+                android:text="Task"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#9F9CBE"
+                android:drawableStart="@drawable/ic_my_task"
+                android:text="My Task"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#04002F"
+                android:text="Schedule"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <CalendarView
+            android:id="@+id/calendarView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:mcv_selectionColor="#673AB7"
+            app:mcv_showOtherDates="all"
+            app:mcv_todayBackgroundColor="#673AB7"
+            app:mcv_weekDayTextAppearance="@style/CalendarWeekDayText" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/ic_progress"
+                android:drawablePadding="8dp"
+                android:text="My schedules"
+                android:textColor="#0F0231"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/ic_complete"
+                android:drawablePadding="8dp"
+                android:text="Free schedules"
+                android:textColor="#0F0231"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="4dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="Eassy Find"
+                android:textColor="#FFFF"
+                android:textSize="20dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="list"
+                app:srcCompat="@drawable/baseline_add_circle_24" />
+
+        </LinearLayout>
+
+        <!-- Upcoming Events -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="331dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Upcoming Schedules"
+                android:textColor="#030644"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:srcCompat="@drawable/baseline_calendar_month_24"
+                android:contentDescription="list"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout14"
+        android:layout_width="413dp"
+
+        android:layout_height="63dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+
+            android:id="@+id/menuButton"
+            android:layout_width="53dp"
+            android:layout_height="64dp"
+            android:background="#BFBBCB"
+            android:contentDescription="menu"
+            android:src="@drawable/baseline_dehaze_24" />
+
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="65dp"
+            android:layout_height="63dp"
+            android:layout_marginBottom="580dp"
+            android:src="@drawable/welcome1__2_"
+            app:srcCompat="@drawable/welcome1__2_" />
+
+        <EditText
+            android:id="@+id/searchBar"
+            style="@style/Widget.AppCompat.AutoCompleteTextView"
+            android:layout_width="242dp"
+            android:layout_height="64dp"
+            android:background="#EFEFEF"
+            android:hint="     What are you looking for" />
+
+        <ImageButton
+            android:id="@+id/notificationButton"
+            android:layout_width="54dp"
+            android:layout_height="63dp"
+            android:background="#BFBBCB"
+            android:contentDescription="Notifications"
+            android:src="@drawable/baseline_edit_notifications_24"
+            tools:srcCompat="@drawable/baseline_edit_notifications_24" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/subscriptionSection"
+        android:layout_width="335dp"
+        android:layout_height="77dp"
+        android:layout_marginBottom="744dp"
+        android:background="@drawable/linearlayout"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout14">
+
+
+        <ImageView
+            android:id="@+id/subscriptionIcon"
+            android:layout_width="93dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/linearlayout"
+            android:padding="5dp"
+            android:src="@drawable/_44_removebg_preview"
+            tools:srcCompat="@drawable/_44_removebg_preview" />
+
+        <TextView
+            android:id="@+id/subscriptionText"
+            android:layout_width="242dp"
+            android:layout_height="76dp"
+            android:text="   Elevate Your Experience\nGet priority matching and find the best candidates faster to complete your assignments."
+            android:textColor="#3D3B42" />
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView2"
+        android:layout_width="410dp"
+        android:layout_height="69dp"
+        app:backgroundTint="#9293A9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_of_menu"
+        app:itemIconTint="#FFFF"
+        app:itemIconSize="32dp"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

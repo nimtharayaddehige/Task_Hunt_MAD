@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".studentHome">
+    tools:context=".schedulelist">
 
 
     <LinearLayout
@@ -73,15 +73,13 @@
         android:layout_marginStart="14dp"
         android:layout_marginTop="84dp"
         android:layout_marginEnd="64dp"
-        android:text="Task Details"
+        android:text="Task shedule list"
         android:textColor="#0F0231"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageButton2"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView2"
@@ -95,5 +93,17 @@
         app:menu="@menu/bottom_of_menu"
         app:itemIconTint="#FFFF"
         app:itemIconSize="32dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="532dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="hint" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

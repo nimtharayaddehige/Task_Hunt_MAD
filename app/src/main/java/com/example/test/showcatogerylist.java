@@ -1,37 +1,33 @@
 package com.example.test;
 
-import android.os.Bundle;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class studentHome extends AppCompatActivity {
-    private Button  findButton;
+public class showcatogerylist extends AppCompatActivity {
 
-    @SuppressLint("MissingInflatedId")
+    private Button backButton;
+
+    @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_home);
+        setContentView(R.layout.activity_showcatogerylist);
 
         // Initialize Views
+        backButton = findViewById(R.id.backButton);
 
-        findButton = findViewById(R.id.findButton);
-
-        findButton.setOnClickListener(v ->
+        backButton.setOnClickListener(v ->
         {
-            Intent intent = new Intent(studentHome.this, showcatogerylist.class);
+            Intent intent = new Intent(showcatogerylist.this, studentHome.class);
             startActivity(intent);
         });
     }
