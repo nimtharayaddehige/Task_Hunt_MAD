@@ -24,7 +24,11 @@ public class manageassignment extends AppCompatActivity {
         setContentView(R.layout.activity_managemyassignment);
 
         // Handle edge-to-edge insets
+<<<<<<< Updated upstream
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+=======
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.ResetButton), (v, insets) -> {
+>>>>>>> Stashed changes
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
@@ -32,7 +36,11 @@ public class manageassignment extends AppCompatActivity {
 
         // Initialize buttons
         addTaskButton = findViewById(R.id.addTaskButton);
+<<<<<<< Updated upstream
         viewTasksButton = findViewById(R.id.draftButton);
+=======
+        viewTasksButton = findViewById(R.id.getStartedButton);
+>>>>>>> Stashed changes
 
         // Set up button click listeners
         addTaskButton.setOnClickListener(v -> navigateToAddTask());

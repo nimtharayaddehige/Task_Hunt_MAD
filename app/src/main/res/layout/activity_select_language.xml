@@ -2,14 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/ResetButton"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".select_language">
 
 
     <RadioButton
-        android:id="@+id/radioButton8"
+        android:id="@+id/sinhalaRadioButton"
         android:layout_width="151dp"
         android:layout_height="48dp"
         android:buttonTint="@color/material_dynamic_neutral80"
@@ -23,11 +23,11 @@
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.704"
+        app:layout_constraintVertical_bias="0.74"
         tools:ignore="MissingConstraints" />
 
     <RadioButton
-        android:id="@+id/radioButton"
+        android:id="@+id/englishRadioButton"
         android:layout_width="151dp"
         android:layout_height="48dp"
         android:text="English"
@@ -40,10 +40,10 @@
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.234" />
+        app:layout_constraintVertical_bias="0.11" />
 
     <RadioButton
-        android:id="@+id/radioButton7"
+        android:id="@+id/tamilRadioButton"
         android:layout_width="154dp"
         android:layout_height="48dp"
         android:buttonTint="@color/blue_500"
@@ -56,8 +56,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton8"
-        app:layout_constraintVertical_bias="0.089" />
+        app:layout_constraintTop_toBottomOf="@+id/sinhalaRadioButton"
+        app:layout_constraintVertical_bias="0.038" />
 
     <TextView
         android:id="@+id/textView17"
@@ -68,12 +68,12 @@
         android:textColor="@color/blue_200"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/radioButton"
+        app:layout_constraintBottom_toTopOf="@+id/englishRadioButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.885" />
+        app:layout_constraintVertical_bias="0.272" />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -141,16 +141,16 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/draftButton"
+        android:id="@+id/getStartedButton"
         android:layout_width="288dp"
         android:layout_height="56dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="56dp"
         android:backgroundTint="#04002F"
         android:text="Get Started"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

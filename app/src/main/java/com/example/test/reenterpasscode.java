@@ -5,28 +5,37 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+<<<<<<< Updated upstream
+=======
+import android.os.Handler;
+import android.view.View;
+>>>>>>> Stashed changes
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class reenterpasscode extends AppCompatActivity {
 
+<<<<<<< Updated upstream
     private SQLiteDatabase database;
     private EditText newPinCodeInput;
     private Button resetButton;
 
+=======
+    private EditText reenterPinInput;
+    private Button resetButton;
+    private SQLiteDatabase database;
+
+    @SuppressLint("MissingInflatedId")
+>>>>>>> Stashed changes
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_reenterpasscode);
 
+<<<<<<< Updated upstream
         applyEdgeToEdgeUI();
         initializeUIComponents();
         initializeDatabase();
@@ -138,5 +147,56 @@ public class reenterpasscode extends AppCompatActivity {
             db.execSQL("DROP TABLE IF EXISTS User");
             onCreate(db);
         }
+=======
+        reenterPinInput = findViewById(R.id.reenterPinInput);
+        resetButton = findViewById(R.id.resetButton);
+
+        // Get the precode value from the intent
+        String precode = getIntent().getStringExtra("precode");
+
+        // Initialize database (replace with your database helper class)
+        DatabaseHelper dbHelper = new DatabaseHelper(this);
+        database = dbHelper.getWritableDatabase();
+
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String reenteredPin = reenterPinInput.getText().toString().trim();
+                if (reenteredPin.length() == 4 && reenteredPin.equals(precode)) { // Validate re-entered PIN
+                    updatePinCode(reenteredPin);
+                } else {
+                    Toast.makeText(reenterpasscode.this, "PIN codes do not match or are invalid.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    private void updatePinCode(String newPinCode) {
+        ContentValues values = new ContentValues();
+        values.put("Pin_Code", newPinCode);
+
+        // Replace 'User_ID' with the actual user identifier column
+        String whereClause = "User_ID = ?";
+        String[] whereArgs = new String[]{"1"}; // Replace '1' with the dynamic user ID
+
+        int rowsUpdated = database.update("User", values, whereClause, whereArgs);
+        if (rowsUpdated > 0) {
+            Toast.makeText(this, "PIN updated successfully. Redirecting to login...", Toast.LENGTH_SHORT).show();
+            navigateToLoginPage(); // Navigate to login page
+        } else {
+            Toast.makeText(this, "Failed to update PIN.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void navigateToLoginPage() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(reenterpasscode.this, loginpage.class); // Replace with your actual login page class
+                startActivity(intent);
+                finish();
+            }
+        }, 2000); // Delay for 2 seconds to show the success message
+>>>>>>> Stashed changes
     }
 }

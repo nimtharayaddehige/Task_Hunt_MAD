@@ -81,7 +81,7 @@
 
 
     <Button
-        android:id="@+id/draftButton"
+        android:id="@+id/getStartedButton"
         android:layout_width="143dp"
         android:layout_height="54dp"
         android:backgroundTint="#9F9CBE"
@@ -104,7 +104,7 @@
         android:textSize="16sp"
         app:icon="@drawable/baseline_add_task_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/draftButton"
+        app:layout_constraintEnd_toStartOf="@+id/getStartedButton"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/linearLayout3"
         app:layout_constraintTop_toTopOf="parent"

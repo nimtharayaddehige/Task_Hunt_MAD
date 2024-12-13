@@ -2,35 +2,56 @@ package com.example.test;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+<<<<<<< Updated upstream
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+=======
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.widget.Button;
+>>>>>>> Stashed changes
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.example.test.reenterpasscode;
 
 public class precode extends AppCompatActivity {
 
+<<<<<<< Updated upstream
     private SQLiteDatabase database;
     private EditText pinCodeInput;
+=======
+    private EditText pinCodeInput;
+    private Button proceedButton;
+>>>>>>> Stashed changes
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_precode);
 
+<<<<<<< Updated upstream
         // Apply WindowInsets for edge-to-edge UI
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+=======
+        pinCodeInput = findViewById(R.id.pinCodeInput);
+        proceedButton = findViewById(R.id.proceedButton);
+
+        proceedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String pinCode = pinCodeInput.getText().toString().trim();
+                checkPinCode(pinCode);
+            }
+>>>>>>> Stashed changes
         });
 
         // Initialize the database and UI
@@ -49,6 +70,7 @@ public class precode extends AppCompatActivity {
         });
     }
 
+<<<<<<< Updated upstream
     /**
      * Checks if the entered PIN code exists in the database.
      *
@@ -111,6 +133,16 @@ public class precode extends AppCompatActivity {
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             db.execSQL("DROP TABLE IF EXISTS User");
             onCreate(db);
+=======
+    private void checkPinCode(String pinCode) {
+        if (pinCode.length() == 4) { // Validate 4-digit PIN
+            Intent intent = new Intent(precode.this, reenterpasscode.class);
+            intent.putExtra("precode", pinCode); // Pass PIN to next activity
+            startActivity(intent);
+            finish();
+        } else {
+            Toast.makeText(this, "PIN must be 4 digits.", Toast.LENGTH_SHORT).show();
+>>>>>>> Stashed changes
         }
     }
 }

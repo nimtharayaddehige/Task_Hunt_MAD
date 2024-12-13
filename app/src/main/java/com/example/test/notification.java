@@ -22,7 +22,7 @@ public class notification extends AppCompatActivity {
         setContentView(R.layout.activity_notification);
 
         // Apply window insets for proper padding of the main view
-        View mainView = findViewById(R.id.main);
+        View mainView = findViewById(R.id.ResetButton);
         if (mainView != null) {
             ViewCompat.setOnApplyWindowInsetsListener(mainView, (view, insets) -> {
                 Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

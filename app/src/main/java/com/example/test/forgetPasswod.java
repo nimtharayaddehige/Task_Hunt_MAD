@@ -1,52 +1,61 @@
 package com.example.test;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class forgetPasswod extends AppCompatActivity {
+import java.util.Random;
 
-    // Declare UI elements
-    private EditText emailField, passwordField;
-    private Button sendCodeButton, loginButton;
+public class forgetpasswod extends AppCompatActivity {
+
+    private EditText emailField;
+    private Button sendCodeButton;
+    private ImageButton backImageButton;
     private UserDatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_forgetpasswod);
 
         // Enable edge-to-edge insets
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.ResetButton), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
         // Initialize UI elements
-        emailField = findViewById(R.id.emailField); // ID for the email input field
-        sendCodeButton = findViewById(R.id.sendCodeButton); // ID for the "Send Code" button
+        emailField = findViewById(R.id.emailTextField);
+        sendCodeButton = findViewById(R.id.sendCodeButton);
+        backImageButton = findViewById(R.id.backImageButton);
 
         // Initialize SQLite database helper
         dbHelper = new UserDatabaseHelper(this);
 
         // Set button click listeners
-        sendCodeButton.setOnClickListener(v -> resetPassword());
-        loginButton.setOnClickListener(v -> validateLogin());
+        sendCodeButton.setOnClickListener(v -> sendResetCode());
+        backImageButton.setOnClickListener(v -> navigateToLoginPage());
     }
 
-    private void resetPassword() {
+    private void navigateToLoginPage() {
+        Intent intent = new Intent(forgetpasswod.this, loginpage.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void sendResetCode() {
         String email = emailField.getText().toString().trim();
 
         // Validate email input
@@ -57,41 +66,40 @@ public class forgetPasswod extends AppCompatActivity {
 
         // Check if email exists in the database
         if (dbHelper.isEmailExists(email)) {
-            Toast.makeText(this, "Password reset instructions sent to: " + email, Toast.LENGTH_SHORT).show();
+            String otp = generateOTP();
+            sendOTP(email, otp);
+            Toast.makeText(this, "OTP sent to: " + email, Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Email not found in the system", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "INCORRECT EMAIL OR THIS EMAIL IS NOT FOUND IN OUR DATABASE", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void validateLogin() {
-        String email = emailField.getText().toString().trim();
-        String password = passwordField.getText().toString().trim();
+    private String generateOTP() {
+        Random random = new Random();
+        int otp = 100000 + random.nextInt(900000); // Generate a 6-digit OTP
+        return String.valueOf(otp);
+    }
 
-        // Validate input
-        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "Please enter both email and password", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        // Check credentials in the database
-        if (dbHelper.validateUser(email, password)) {
-            Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show();
-        }
+    private void sendOTP(String email, String otp) {
+        // Simulate sending OTP - Replace with actual email API integration
+        System.out.println("Sending OTP: " + otp + " to email: " + email);
+        // Navigate to the enterpincode activity
+        Intent intent = new Intent(this, Enternewpassword.class);
+        startActivity(intent);
+        finish(); // Close current activity
     }
 
     // SQLite Database Helper Class
     static class UserDatabaseHelper extends draft.TaskDatabaseHelper {
 
-        public UserDatabaseHelper(forgetPasswod context) {
+        public UserDatabaseHelper(forgetpasswod context) {
             super(context);
         }
 
         @Override
         public void onCreate(SQLiteDatabase db) {
             super.onCreate(db);
-            db.execSQL("CREATE TABLE User (" +
+            db.execSQL("CREATE TABLE IF NOT EXISTS User (" +
                     "User_ID INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "First_Name TEXT NOT NULL," +
                     "Last_Name TEXT NOT NULL," +
@@ -109,14 +117,6 @@ public class forgetPasswod extends AppCompatActivity {
             boolean exists = cursor.getCount() > 0;
             cursor.close();
             return exists;
-        }
-
-        public boolean validateUser(String email, String password) {
-            SQLiteDatabase db = this.getReadableDatabase();
-            Cursor cursor = db.rawQuery("SELECT * FROM User WHERE Email = ? AND Password = ?", new String[]{email, password});
-            boolean isValid = cursor.getCount() > 0;
-            cursor.close();
-            return isValid;
         }
     }
 }

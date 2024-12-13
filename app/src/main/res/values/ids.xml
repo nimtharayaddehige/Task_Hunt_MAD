@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="drawerLayout" type="id">drawerLayout</item>
+    <item name="menuDrawer" type="id">menuDrawer</item>
+    <item name="menuListView" type="id">menuListView</item>
+    <item name="proceedButton" type="id">proceedButton</item>
+    <item name="reenterPinInput" type="id">reenterPinInput</item>
+    <item name="resetButton" type="id">resetButton</item>
+</resources>

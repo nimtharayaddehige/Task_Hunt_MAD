@@ -20,7 +20,11 @@ public class subscriptionsuccesfully extends AppCompatActivity {
         setContentView(R.layout.activity_subscriptionsuccesfully);
 
         // Apply window insets for edge-to-edge
+<<<<<<< Updated upstream
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+=======
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.ResetButton), (v, insets) -> {
+>>>>>>> Stashed changes
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;

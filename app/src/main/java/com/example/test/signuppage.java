@@ -5,6 +5,10 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+<<<<<<< Updated upstream
+=======
+import android.text.TextUtils;
+>>>>>>> Stashed changes
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +20,11 @@ public class signuppage extends AppCompatActivity {
 
     private SQLiteDatabase database;
     private EditText firstNameEditText, lastNameEditText, dobEditText, contactNumberEditText,
+<<<<<<< Updated upstream
             emailEditText, passwordEditText, confirmPasswordEditText, locationEditText, fieldToStudyText;
+=======
+            emailEditText, passwordEditText, confirmPasswordEditText, locationEditText;
+>>>>>>> Stashed changes
     private Button nextButton, backButton;
 
     @SuppressLint("WrongViewCast")
@@ -40,6 +48,7 @@ public class signuppage extends AppCompatActivity {
         // Open or create the database
         database = openOrCreateDatabase("TaskHunt_Database_SQLite", MODE_PRIVATE, null);
 
+<<<<<<< Updated upstream
         // Set button click listener
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +56,11 @@ public class signuppage extends AppCompatActivity {
                 registerUser();
             }
         });
+=======
+        // Set listeners for buttons
+        nextButton.setOnClickListener(v -> registerUser());
+        backButton.setOnClickListener(v -> navigateToEnterApp());
+>>>>>>> Stashed changes
     }
 
     private void registerUser() {
@@ -59,9 +73,16 @@ public class signuppage extends AppCompatActivity {
         String confirmPassword = confirmPasswordEditText.getText().toString().trim();
         String location = locationEditText.getText().toString().trim();
 
+<<<<<<< Updated upstream
 
         if (firstName.isEmpty() || lastName.isEmpty() || dob.isEmpty() || contactNumber.isEmpty() ||
                 email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+=======
+        // Validate input fields
+        if (TextUtils.isEmpty(firstName) || TextUtils.isEmpty(lastName) || TextUtils.isEmpty(dob) ||
+                TextUtils.isEmpty(contactNumber) || TextUtils.isEmpty(email) ||
+                TextUtils.isEmpty(password) || TextUtils.isEmpty(confirmPassword)) {
+>>>>>>> Stashed changes
             Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -71,6 +92,20 @@ public class signuppage extends AppCompatActivity {
             return;
         }
 
+<<<<<<< Updated upstream
+=======
+        if (password.length() < 6) {
+            Toast.makeText(this, "Password must be at least 6 characters long", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            Toast.makeText(this, "Invalid email address", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Prepare values for insertion
+>>>>>>> Stashed changes
         ContentValues values = new ContentValues();
         values.put("First_Name", firstName);
         values.put("Last_Name", lastName);
@@ -80,19 +115,37 @@ public class signuppage extends AppCompatActivity {
         values.put("Password", password);
         values.put("Location", location);
 
+<<<<<<< Updated upstream
 
+=======
+        // Insert into the database
+>>>>>>> Stashed changes
         long result = database.insert("User", null, values);
 
         if (result == -1) {
             Toast.makeText(this, "Registration failed. Try again.", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "Registration successful!", Toast.LENGTH_SHORT).show();
+<<<<<<< Updated upstream
+=======
+            // Navigate to Terms class
+>>>>>>> Stashed changes
             Intent intent = new Intent(signuppage.this, Terms.class);
             startActivity(intent);
             finish();
         }
     }
 
+<<<<<<< Updated upstream
+=======
+    private void navigateToEnterApp() {
+        // Navigate to EnterApp class
+        Intent intent = new Intent(signuppage.this, enterapp.class);
+        startActivity(intent);
+        finish();
+    }
+
+>>>>>>> Stashed changes
     @Override
     protected void onDestroy() {
         super.onDestroy();

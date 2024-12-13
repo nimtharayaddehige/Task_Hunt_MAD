@@ -17,9 +17,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+<<<<<<< Updated upstream
 import java.util.HashMap;
 import java.util.Map;
 
+=======
+>>>>>>> Stashed changes
 public class draft extends AppCompatActivity {
 
     private Button addTaskButton, draftButton;
@@ -31,7 +34,7 @@ public class draft extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_draft);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.ResetButton), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
@@ -42,7 +45,7 @@ public class draft extends AppCompatActivity {
 
         // Link Buttons to their IDs in the XML Layout
         addTaskButton = findViewById(R.id.addTaskButton);
-        draftButton = findViewById(R.id.draftButton);
+        draftButton = findViewById(R.id.getStartedButton);
 
         // Add Task Button Functionality
         addTaskButton.setOnClickListener(new View.OnClickListener() {
