@@ -106,7 +106,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Add Your Schedule"
+                android:text="  Add Your Schedule"
                 android:textColor="#030644"
                 android:textSize="30dp"
                 android:textStyle="bold" />

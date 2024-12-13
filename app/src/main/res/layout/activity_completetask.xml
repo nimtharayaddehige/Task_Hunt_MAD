@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".taskdetails">
+    tools:context=".completetask">
 
 
     <LinearLayout
@@ -267,29 +267,15 @@
 
     <Button
         android:id="@+id/applytbtn"
-        android:layout_width="154dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="187dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="#04002F"
-        android:text="Apply"
+        android:text="view feedback"
         android:textColor="#FFFFFF"
-        android:textSize="15sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/editTextNumberDecimal"
-        app:layout_constraintHorizontal_bias="0.945"
-        app:layout_constraintStart_toStartOf="@+id/editTextNumberDecimal"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
-
-    <Button
-        android:id="@+id/draftbtn"
-        android:layout_width="154dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="52dp"
-        android:backgroundTint="#04002F"
-        android:text="Save"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toStartOf="@+id/applytbtn"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/editTextNumberDecimal"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
 
