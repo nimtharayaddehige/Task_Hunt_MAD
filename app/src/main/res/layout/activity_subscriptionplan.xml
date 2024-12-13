@@ -134,7 +134,7 @@
         app:srcCompat="@drawable/subscript3__2_" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/subscribeButton"
         android:backgroundTint="#04002F"
         android:layout_width="288dp"
         android:layout_height="56dp"
