@@ -13,6 +13,21 @@
         android:theme="@style/Theme.Test"
         tools:targetApi="31">
         <activity
+            android:name=".completetaskdetails"
+            android:exported="false" />
+        <activity
+            android:name=".completasklist"
+            android:exported="false" />
+        <activity
+            android:name=".remotetask"
+            android:exported="false" />
+        <activity
+            android:name=".physicaltask"
+            android:exported="false" />
+        <activity
+            android:name=".Viewtaskdetails"
+            android:exported="false" />
+        <activity
             android:name=".completetask"
             android:exported="false" />
         <activity

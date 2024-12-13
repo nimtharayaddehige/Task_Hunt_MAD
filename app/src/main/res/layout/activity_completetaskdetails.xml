@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".taskdetails">
+    tools:context=".completetaskdetails">
 
 
     <LinearLayout
@@ -266,12 +266,12 @@
         app:itemIconSize="32dp"/>
 
     <Button
-        android:id="@+id/applytbtn"
+        android:id="@+id/feedbacktbtn"
         android:layout_width="154dp"
         android:layout_height="52dp"
         android:layout_marginTop="52dp"
         android:backgroundTint="#04002F"
-        android:text="Apply"
+        android:text="Feedback"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/editTextNumberDecimal"

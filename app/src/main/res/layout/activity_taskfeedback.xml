@@ -155,7 +155,7 @@
             android:gravity="top"
             android:inputType="textMultiLine"
             android:padding="8dp"
-            />
+            android:hint="enter your thoughts" />
 
 
         <TextView
@@ -183,6 +183,7 @@
             android:id="@+id/button3"
             android:layout_width="154dp"
             android:layout_height="52dp"
+            android:backgroundTint="#04002F"
             android:text="Send"
             android:textColor="#FFFFFF"
             android:textSize="15sp" />
