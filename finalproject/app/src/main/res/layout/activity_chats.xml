@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Chats">
+
+
+
+<LinearLayout
+android:layout_width="413dp"
+android:layout_height="63dp"
+android:background="#BFBBCB"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.0"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent">
+
+<ImageButton
+
+    android:id="@+id/menuButton"
+    android:layout_width="53dp"
+    android:layout_height="64dp"
+    android:background="#BFBBCB"
+    android:contentDescription="menu"
+    android:src="@drawable/baseline_menu_24" />
+
+<ImageView
+    android:id="@+id/logoImage"
+    android:layout_width="65dp"
+    android:layout_height="63dp"
+    android:layout_marginBottom="580dp"
+    android:background="#FDFCF9"
+    android:src="@drawable/welcome1_2"
+    app:srcCompat="@drawable/welcome1_2" />
+
+
+<ImageButton
+    android:id="@+id/notificationButton"
+    android:layout_width="225dp"
+    android:layout_height="63dp"
+    android:background="#BFBBCB"
+    android:contentDescription="Notifications"
+    android:src="@drawable/baseline_edit_notifications_24"
+    tools:srcCompat="@drawable/baseline_edit_notifications_24" />
+
+<ImageButton
+    android:id="@+id/imageButton9"
+    android:layout_width="67dp"
+    android:layout_height="63dp"
+    android:backgroundTint="#BFBBCB"
+    android:foregroundTint="#BFBBCB"
+    app:srcCompat="@drawable/baseline_notifications_24" />
+
+</LinearLayout>
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="315dp"
+        android:layout_height="59dp"
+        android:background="#FFFCFC"
+        android:text="Chats"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="76dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+</androidx.constraintlayout.widget.ConstraintLayout>
