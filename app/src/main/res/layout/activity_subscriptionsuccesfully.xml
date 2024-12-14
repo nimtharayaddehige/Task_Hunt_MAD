@@ -88,4 +88,5 @@
         app:menu="@menu/bottom_of_menu"
         app:itemIconTint="#FFFF"
         app:itemIconSize="32dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

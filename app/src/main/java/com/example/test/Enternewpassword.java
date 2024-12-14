@@ -1,50 +1,53 @@
 package com.example.test;
 
+import android.content.ContentValues;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 public class Enternewpassword extends AppCompatActivity {
 
     // Declare UI elements
     private EditText newPasswordField, reEnterPasswordField;
-    private Button sendCodeButton;
-    private FirebaseAuth firebaseAuth;
+    private Button resetButton;
+    private ImageButton backImageButton;
+
+    // Database variables
+    private SQLiteDatabase database;
+    private String userEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_enternewpassword);
 
-        // Enable edge-to-edge insets
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
         // Initialize UI elements
-        newPasswordField = findViewById(R.id.newPasswordTextfield);
-        reEnterPasswordField = findViewById(R.id.ReEnterPasswordTextfield);
-        sendCodeButton = findViewById(R.id.sendCodeButton);
+        newPasswordField = findViewById(R.id.editTextNumberPassword);
+        reEnterPasswordField = findViewById(R.id.editTextNumberPassword2);
+        resetButton = findViewById(R.id.sendCodeButton);
+        backImageButton = findViewById(R.id.imageButton3);
 
-        // Initialize Firebase Auth
-        firebaseAuth = FirebaseAuth.getInstance();
+        // Open database
+        DatabaseHelper dbHelper = new DatabaseHelper(this);
+        database = dbHelper.getWritableDatabase();
 
-        // Set up button click listener
-        sendCodeButton.setOnClickListener(v -> resetPassword());
+        // Get the email passed from the ForgetPassword screen
+        userEmail = getIntent().getStringExtra("EMAIL");
+
+        // Set up button click listeners
+        resetButton.setOnClickListener(v -> resetPassword());
+        backImageButton.setOnClickListener(v -> navigateToForgetPassword());
     }
 
     private void resetPassword() {
@@ -70,15 +73,81 @@ public class Enternewpassword extends AppCompatActivity {
             return;
         }
 
-        // Reset password using Firebase Authentication
-        firebaseAuth.getCurrentUser().updatePassword(newPassword)
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(this, "Password reset successfully", Toast.LENGTH_SHORT).show();
-                        finish(); // Go back to the previous screen
-                    } else {
-                        Toast.makeText(this, "Failed to reset password: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+        // Check if the email exists in the database
+        Cursor cursor = database.query("User", new String[]{"Email"}, "Email = ?", new String[]{userEmail}, null, null, null);
+        if (cursor != null && cursor.moveToFirst()) {
+            // Update the password in the database
+            ContentValues values = new ContentValues();
+            values.put("Password", newPassword);
+
+            int rowsAffected = database.update("User", values, "Email = ?", new String[]{userEmail});
+            if (rowsAffected > 0) {
+                Toast.makeText(this, "Password updated successfully", Toast.LENGTH_SHORT).show();
+                navigateToPasswordSuccessfully();
+                finish(); // Navigate back to the previous screen
+            } else {
+                Toast.makeText(this, "Failed to update password", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(this, "Email not found", Toast.LENGTH_SHORT).show();
+        }
+
+        if (cursor != null) {
+            cursor.close();
+        }
+    }
+
+    private void navigateToForgetPassword() {
+        // Navigate back to the ForgetPassword class
+        Intent intent = new Intent(this, forgetpasswod.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void navigateToPasswordSuccessfully() {
+        // Navigate back to the PasswordSuccessfully class
+        Intent intent = new Intent(this, passwordsuccessful.class);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (database != null) {
+            database.close();
+        }
+    }
+}
+
+// DatabaseHelper class to manage SQLite database
+class DatabaseHelper extends android.database.sqlite.SQLiteOpenHelper {
+
+    private static final String DATABASE_NAME = "TaskHunt_Database_SQLite";
+    private static final int DATABASE_VERSION = 1;
+
+    public DatabaseHelper(android.content.Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        // Create User table
+        db.execSQL("CREATE TABLE IF NOT EXISTS User (" +
+                "User_ID INTEGER PRIMARY KEY, " +
+                "First_Name TEXT NOT NULL, " +
+                "Last_Name TEXT NOT NULL, " +
+                "Date_Of_Birth DATE, " +
+                "Contact_Number TEXT, " +
+                "Email TEXT UNIQUE, " +
+                "Password TEXT NOT NULL, " +
+                "Location TEXT, " +
+                "Pin_Code TEXT);");
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS User");
+        onCreate(db);
     }
 }

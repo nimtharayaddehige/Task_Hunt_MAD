@@ -96,76 +96,84 @@
             android:textColor="#3D3B42" />
     </LinearLayout>
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="@+id/button9"
-        app:layout_constraintStart_toStartOf="@+id/button8"
-        app:layout_constraintTop_toBottomOf="@+id/button10"
-        app:tabIndicatorColor="#04002F"
-        app:tabIndicatorHeight="4dp"
-        app:tabSelectedTextColor="#04002F"
-        app:tabTextColor="#49454F">
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="All Task" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Active Task" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Save Task" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Complete Task" />
-    </com.google.android.material.tabs.TabLayout>
-
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/allTaskButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="All task"
+        android:layout_marginTop="12dp"
         android:backgroundTint="#04002F"
-        app:layout_constraintEnd_toStartOf="@+id/button10"
+        android:text="All task"
+        app:layout_constraintEnd_toStartOf="@+id/physicalButton"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/subscriptionSection"
         app:layout_constraintTop_toBottomOf="@+id/subscriptionSection" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/remoteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Remote"
+        android:layout_marginTop="12dp"
         android:backgroundTint="#84829C"
+        android:text="Remote"
         app:layout_constraintEnd_toEndOf="@+id/subscriptionSection"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/subscriptionSection"
         app:layout_constraintTop_toBottomOf="@+id/subscriptionSection" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/physicalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="20dp"
-        android:text="Physical"
         android:backgroundTint="#84829C"
-        app:layout_constraintEnd_toStartOf="@+id/button9"
+        android:text="Physical"
+        app:layout_constraintEnd_toStartOf="@+id/remoteButton"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/subscriptionSection"
         app:layout_constraintTop_toBottomOf="@+id/subscriptionSection" />
+
+    <Button
+        android:id="@+id/completeTaskButton"
+        android:layout_width="334dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#84829C"
+        android:text="Complete Task"
+        app:layout_constraintEnd_toEndOf="@+id/remoteButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/allTaskButton"
+        app:layout_constraintTop_toBottomOf="@+id/physicalButton" />
+
+    <ScrollView
+        android:layout_width="375dp"
+        android:layout_height="537dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/completeTaskButton">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/detailsView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text=""
+                android:textColor="#030644"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

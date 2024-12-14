@@ -108,7 +108,7 @@
             app:srcCompat="@drawable/subscription2" />
 
         <ImageView
-            android:id="@+id/imageView16"
+            android:id="@+id/okImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="484dp"

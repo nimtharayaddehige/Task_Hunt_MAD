@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
     <EditText
-        android:id="@+id/emailField"
+        android:id="@+id/emailEditText"
         android:layout_width="340dp"
         android:layout_height="67dp"
         android:layout_marginTop="1dp"
@@ -86,9 +86,9 @@
         android:textColor="@color/white"
         android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/emailField"
+        app:layout_constraintEnd_toEndOf="@+id/emailEditText"
         app:layout_constraintHorizontal_bias="0.625"
-        app:layout_constraintStart_toStartOf="@+id/emailField" />
+        app:layout_constraintStart_toStartOf="@+id/emailEditText" />
 
     <ImageView
         android:id="@+id/imageView25"
