@@ -1,7 +1,8 @@
 package com.example.test;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
@@ -17,6 +18,7 @@ public class postassigfeedback extends AppCompatActivity {
     private EditText feedbackInput;
     private RatingBar ratingBar;
     private Button submitButton;
+    private SQLiteDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,10 @@ public class postassigfeedback extends AppCompatActivity {
         feedbackInput = findViewById(R.id.feedbackInput);
         ratingBar = findViewById(R.id.starRating);
         submitButton = findViewById(R.id.submitButton);
+
+        // Initialize database
+        AssignmentDatabaseHelper dbHelper = new AssignmentDatabaseHelper(this, "TaskHunt_Database_SQLite", null, 1);
+        database = dbHelper.getWritableDatabase();
 
         // Set up edge-to-edge display
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.submitButton), (v, insets) -> {
@@ -49,27 +55,64 @@ public class postassigfeedback extends AppCompatActivity {
         if (feedbackText.isEmpty() || rating == 0) {
             Toast.makeText(this, "Please provide feedback and a rating.", Toast.LENGTH_SHORT).show();
         } else {
-            // Example logic to handle feedback submission
-            Toast.makeText(this, "Thank you for your feedback!", Toast.LENGTH_SHORT).show();
+            // Insert feedback into the database
+            ContentValues values = new ContentValues();
+            values.put("Feedback", feedbackText);
+            values.put("Reviews", String.valueOf(rating));
+            values.put("Service_Provider_ID", "ExampleProviderID"); // Replace with actual provider ID
 
-            // TODO: Replace this with backend integration or local database storage
-            sendFeedbackToServer(feedbackText, rating);
+            long newRowId = database.insert("Service_Provider_Feedback", null, values);
 
-            // Clear input fields after submission
-            feedbackInput.setText("");
-            ratingBar.setRating(0);
+            if (newRowId != -1) {
+                Toast.makeText(this, "Thank you for your feedback!", Toast.LENGTH_SHORT).show();
+
+                // Clear input fields after submission
+                feedbackInput.setText("");
+                ratingBar.setRating(0);
+            } else {
+                Toast.makeText(this, "Failed to submit feedback. Please try again.", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (database != null) {
+            database.close();
         }
     }
 
     /**
-     * Sends the feedback to a server or database (Placeholder function).
-     *
-     * @param feedbackText The text feedback.
-     * @param rating       The star rating.
+     * SQLiteOpenHelper for managing the database.
      */
-    private void sendFeedbackToServer(String feedbackText, float rating) {
-        // TODO: Implement actual API call or database save logic here
-        // Example: Log the feedback (for debugging purposes)
-        System.out.println("Feedback Submitted: " + feedbackText + " | Rating: " + rating);
+    private static class AssignmentDatabaseHelper extends android.database.sqlite.SQLiteOpenHelper {
+
+        private static final String DATABASE_NAME = "TaskHunt_Database_SQLite";
+        private static final int DATABASE_VERSION = 1;
+
+        // SQL command to create the Service_Provider_Feedback table
+        private static final String CREATE_FEEDBACK_TABLE =
+                "CREATE TABLE Service_Provider_Feedback (" +
+                        "SP_Feedback_ID INTEGER PRIMARY KEY, " +
+                        "Feedback TEXT, " +
+                        "Reviews TEXT, " +
+                        "Service_Provider_ID TEXT, " +
+                        "FOREIGN KEY (Service_Provider_ID) REFERENCES Service_Provider(Company_Name));";
+
+        public AssignmentDatabaseHelper(android.content.Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+            super(context, name, factory, version);
+        }
+
+        @Override
+        public void onCreate(SQLiteDatabase db) {
+            db.execSQL(CREATE_FEEDBACK_TABLE);
+        }
+
+        @Override
+        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+            db.execSQL("DROP TABLE IF EXISTS Service_Provider_Feedback");
+            onCreate(db);
+        }
     }
 }

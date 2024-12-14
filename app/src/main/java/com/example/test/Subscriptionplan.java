@@ -1,24 +1,30 @@
 package com.example.test;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class Subscriptionplan extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_subscriptionplan);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        // Reference the Subscribe button
+        Button subscribeButton = findViewById(R.id.subscribeButton); // Matches the ID in the XML
+
+        // Set an onClick listener for the Subscribe button
+        subscribeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to SubscriptionSuccessfully activity
+                Intent intent = new Intent(Subscriptionplan.this, subscriptionsuccesfully.class);
+                startActivity(intent);
+            }
         });
     }
 }

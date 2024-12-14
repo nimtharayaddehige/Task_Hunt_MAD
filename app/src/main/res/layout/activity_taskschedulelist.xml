@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".taskschedulelist">
+
+
+    <LinearLayout
+        android:layout_width="413dp"
+        android:layout_height="63dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+
+            android:id="@+id/menuButton"
+            android:layout_width="53dp"
+            android:layout_height="64dp"
+            android:background="#BFBBCB"
+            android:contentDescription="menu"
+            android:src="@drawable/baseline_dehaze_24" />
+
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="65dp"
+            android:layout_height="63dp"
+            android:layout_marginBottom="580dp"
+            android:src="@drawable/welcome1__2_"
+            app:srcCompat="@drawable/welcome1__2_" />
+
+        <EditText
+            android:id="@+id/searchBar"
+            style="@style/Widget.AppCompat.AutoCompleteTextView"
+            android:layout_width="242dp"
+            android:layout_height="64dp"
+            android:background="#EFEFEF"
+            android:hint="     What are you looking for" />
+
+        <ImageButton
+            android:id="@+id/notificationButton"
+            android:layout_width="54dp"
+            android:layout_height="63dp"
+            android:background="#BFBBCB"
+            android:contentDescription="Notifications"
+            android:src="@drawable/baseline_edit_notifications_24"
+            tools:srcCompat="@drawable/baseline_edit_notifications_24" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="53dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/code5"
+        android:contentDescription="back"/>
+
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="293dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="64dp"
+        android:text="Task schedule list"
+        android:textColor="#0F0231"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageButton2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView2"
+        android:layout_width="410dp"
+        android:layout_height="69dp"
+        app:backgroundTint="#9293A9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_of_menu"
+        app:itemIconTint="#FFFF"
+        app:itemIconSize="32dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
