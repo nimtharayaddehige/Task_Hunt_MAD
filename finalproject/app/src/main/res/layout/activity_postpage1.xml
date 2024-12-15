@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".postpage1">
+
+    <LinearLayout
+        android:layout_width="413dp"
+        android:layout_height="63dp"
+        android:background="#BFBBCB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+
+            android:id="@+id/menuButton"
+            android:layout_width="53dp"
+            android:layout_height="64dp"
+            android:background="#BFBBCB"
+            android:contentDescription="menu"
+            android:src="@drawable/baseline_menu_24" />
+
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="65dp"
+            android:layout_height="63dp"
+            android:layout_marginBottom="580dp"
+            android:background="#FDFCF9"
+            android:src="@drawable/welcome1_2"
+            app:srcCompat="@drawable/welcome1_2" />
+
+
+        <ImageButton
+            android:id="@+id/notificationButton"
+            android:layout_width="225dp"
+            android:layout_height="63dp"
+            android:background="#BFBBCB"
+            android:contentDescription="Notifications"
+            android:src="@drawable/baseline_edit_notifications_24"
+            tools:srcCompat="@drawable/baseline_edit_notifications_24" />
+
+        <ImageButton
+            android:id="@+id/imageButton9"
+            android:layout_width="67dp"
+            android:layout_height="63dp"
+            android:backgroundTint="#BFBBCB"
+            android:foregroundTint="#BFBBCB"
+            app:srcCompat="@drawable/baseline_notifications_24" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/textView52"
+        android:layout_width="275dp"
+        android:layout_height="48dp"
+        android:text="TextView"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="197dp" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Task Category"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="268dp" />
+
+    <TextView
+        android:id="@+id/textView50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="453dp" />
+
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Task Type"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="210dp" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Date"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="519dp" />
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Specail Note"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="752dp" />
+
+    <TextView
+        android:id="@+id/textView51"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End Date"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="572dp" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="253dp"
+        android:layout_height="51dp"
+        android:text="TextView"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="135dp"
+        tools:layout_editor_absoluteY="683dp" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="231dp"
+        android:layout_height="48dp"
+        android:text="TextView"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="313dp" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="276dp"
+        android:layout_height="49dp"
+        android:text="TextView"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="504dp" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="252dp"
+        android:layout_height="48dp"
+        android:text="TextView"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="139dp"
+        tools:layout_editor_absoluteY="256dp" />
+
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No. of Applicants"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="329dp" />
+
+    <TextView
+        android:id="@+id/textView53"
+        android:layout_width="209dp"
+        android:layout_height="35dp"
+        android:text="Task Title"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="136dp" />
+
+    <TextView
+        android:id="@+id/textView49"
+        android:layout_width="277dp"
+        android:layout_height="49dp"
+        android:text="TextView"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="562dp" />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="194dp"
+        android:layout_height="48dp"
+        android:text="TextView"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="199dp"
+        tools:layout_editor_absoluteY="621dp" />
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Company Contact No"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="631dp" />
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pay Amount"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="694dp" />
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="273dp"
+        android:layout_height="53dp"
+        android:text="TextView"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="374dp" />
+
+    <TextView
+        android:id="@+id/textView40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="384dp" />
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="253dp"
+        android:layout_height="51dp"
+        android:text="TextView"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="135dp"
+        tools:layout_editor_absoluteY="744dp" />
+
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="315dp"
+        android:layout_height="59dp"
+        android:background="#FFFCFC"
+        android:text="Posted Task"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="63dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton10"
+        android:layout_width="66dp"
+        android:layout_height="52dp"
+        app:srcCompat="@drawable/baseline_arrow_back_24"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="63dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/edit"
+        tools:layout_editor_absoluteX="263dp"
+        tools:layout_editor_absoluteY="816dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

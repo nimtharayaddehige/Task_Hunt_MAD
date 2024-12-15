@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".vacancy1">
+
+    <LinearLayout
+        android:layout_width="413dp"
+        android:layout_height="63dp"
+        android:background="#BFBBCB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+
+            android:id="@+id/menuButton"
+            android:layout_width="53dp"
+            android:layout_height="64dp"
+            android:background="#BFBBCB"
+            android:contentDescription="menu"
+            android:src="@drawable/baseline_menu_24" />
+
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="65dp"
+            android:layout_height="63dp"
+            android:layout_marginBottom="580dp"
+            android:background="#FDFCF9"
+            android:src="@drawable/welcome1_2"
+            app:srcCompat="@drawable/welcome1_2" />
+
+
+        <ImageButton
+            android:id="@+id/notificationButton"
+            android:layout_width="225dp"
+            android:layout_height="63dp"
+            android:background="#BFBBCB"
+            android:contentDescription="Notifications"
+            android:src="@drawable/baseline_edit_notifications_24"
+            tools:srcCompat="@drawable/baseline_edit_notifications_24" />
+
+        <ImageButton
+            android:id="@+id/imageButton9"
+            android:layout_width="67dp"
+            android:layout_height="63dp"
+            android:backgroundTint="#BFBBCB"
+            android:foregroundTint="#BFBBCB"
+            app:srcCompat="@drawable/baseline_notifications_24" />
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled" >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Your Task Vacancy"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="63dp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Company Contact No"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="703dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="498dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Date"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="591dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End Date"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="644dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pay Amount"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="755dp" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="249dp"
+        android:layout_height="54dp"
+        android:background="@drawable/border"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="138dp"
+        tools:layout_editor_absoluteY="238dp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Task Title"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="136dp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Task Category"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="254dp" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine"
+        android:layout_width="279dp"
+        android:layout_height="73dp"
+        android:background="@drawable/border"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Building No, Street Name, City."
+        android:inputType="textMultiLine"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="369dp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Task Type"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="196dp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No. of Applicants"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="315dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="399dp" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="259dp"
+        android:layout_height="54dp"
+        android:background="@drawable/border"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="177dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="262dp"
+        android:layout_height="48dp"
+        android:background="@drawable/border"
+        android:hint="Task Name"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="121dp" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="225dp"
+        android:layout_height="58dp"
+        android:background="@drawable/border"
+        android:ems="10"
+        android:hint="Available vacancies"
+        android:inputType="number"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="162dp"
+        tools:layout_editor_absoluteY="302dp" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="256dp"
+        android:layout_height="50dp"
+        android:background="@drawable/border"
+        android:hint="YYYY-MM-DD"
+        android:ems="10"
+        android:inputType="date"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="572dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextDate2"
+        android:layout_width="257dp"
+        android:layout_height="50dp"
+        android:background="@drawable/border"
+        android:hint="YYYY-MM-DD"
+        android:ems="10"
+        android:inputType="date"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="631dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextNumberDecimal"
+        android:layout_width="205dp"
+        android:layout_height="50dp"
+        android:background="@drawable/border"
+        android:ems="10"
+        android:hint="Rs.           .00"
+        android:inputType="numberDecimal"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="183dp"
+        tools:layout_editor_absoluteY="738dp" />
+
+    <EditText
+        android:id="@+id/editTextNumber2"
+        android:layout_width="198dp"
+        android:layout_height="50dp"
+        android:background="@drawable/border"
+        android:hint="+94"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="194dp"
+        tools:layout_editor_absoluteY="683dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/imageButton11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/baseline_arrow_back_24"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="63dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="92dp"
+        android:layout_height="43dp"
+        android:src="@drawable/baseline_arrow_forward_24"
+        tools:layout_editor_absoluteX="295dp"
+        tools:layout_editor_absoluteY="800dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

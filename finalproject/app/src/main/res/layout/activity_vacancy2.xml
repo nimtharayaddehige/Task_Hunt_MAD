@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".vacancy2">
+    <LinearLayout
+        android:layout_width="413dp"
+        android:layout_height="63dp"
+        android:background="#BFBBCB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+
+            android:id="@+id/menuButton"
+            android:layout_width="53dp"
+            android:layout_height="64dp"
+            android:background="#BFBBCB"
+            android:contentDescription="menu"
+            android:src="@drawable/baseline_menu_24" />
+
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="65dp"
+            android:layout_height="63dp"
+            android:layout_marginBottom="580dp"
+            android:background="#FDFCF9"
+            android:src="@drawable/welcome1_2"
+            app:srcCompat="@drawable/welcome1_2" />
+
+
+        <ImageButton
+            android:id="@+id/notificationButton"
+            android:layout_width="225dp"
+            android:layout_height="63dp"
+            android:background="#BFBBCB"
+            android:contentDescription="Notifications"
+            android:src="@drawable/baseline_edit_notifications_24"
+            tools:srcCompat="@drawable/baseline_edit_notifications_24" />
+
+        <ImageButton
+            android:id="@+id/imageButton9"
+            android:layout_width="67dp"
+            android:layout_height="63dp"
+            android:backgroundTint="#BFBBCB"
+            android:foregroundTint="#BFBBCB"
+            app:srcCompat="@drawable/baseline_notifications_24" />
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled" />
+
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Special Note"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="19dp"
+        tools:layout_editor_absoluteY="389dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Attached Files"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="99dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="348dp"
+        android:layout_height="186dp"
+        app:srcCompat="@drawable/ab"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="132dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="341dp"
+        android:layout_height="51dp"
+        app:srcCompat="@drawable/dc"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="321dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="39dp"
+        android:layout_height="36dp"
+        app:srcCompat="@drawable/baseline_image_24"
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="327dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="38dp"
+        android:layout_height="42dp"
+        app:srcCompat="@drawable/baseline_delete_24"
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck"
+        tools:layout_editor_absoluteX="318dp"
+        tools:layout_editor_absoluteY="321dp" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine2"
+        android:layout_width="332dp"
+        android:layout_height="80dp"
+        android:background="@drawable/border"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="421dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="105dp"
+        android:layout_height="51dp"
+        app:srcCompat="@drawable/Pb"
+        tools:layout_editor_absoluteX="274dp"
+        tools:layout_editor_absoluteY="580dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="102dp"
+        android:layout_height="49dp"
+        app:srcCompat="@drawable/Bb"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="580dp"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
